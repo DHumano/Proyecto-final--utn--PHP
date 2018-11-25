@@ -24,10 +24,10 @@ class Pedidos extends Model{
 
 
 	public function altaPedido($codigo_producto,$precio,$cant,$cuit){
+		if(!ctype_digit($cant)) die("error cantidad");
+		if($cant==0) die('cantidad no puede ser 0');
 		if(!ctype_digit($codigo_producto)) die("error id");
 		if(!is_numeric($precio)) die("error id");
-		if(!ctype_digit($cant)) die("error id");
-		
 		$this->db->query("UPDATE productos	
 							SET stock= stock+ $cant
                             WHERE codigo_producto=$codigo_producto");

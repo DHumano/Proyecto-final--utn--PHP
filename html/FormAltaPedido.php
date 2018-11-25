@@ -41,7 +41,7 @@ require '../html/partials/header.php';
                         </select>
                     </td>
                     <td>
-                        <input style="width:55px" type="text" value=0 name="cantidad[]" id="cantidad1">
+                        <input style="width:55px" type="text" value=0 name="cantidad[]" id="cantidad1" required>
                     </td>
                     <td>
                         <div name="precio[]" id="precio1">

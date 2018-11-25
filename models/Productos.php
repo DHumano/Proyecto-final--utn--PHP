@@ -23,10 +23,14 @@ class Productos extends Model{
 		return $this->db->fetchAll();
 	}
 
-	public function altaProducto($nombre,$categoria){
+	public function altaProducto($nombre,$categoria,$precio,$stock,$pto_reposicion){
 		if(strlen($nombre)<2) die("error1");
 		$nombre=substr($nombre,0,30);
 		$nombre=$this->db->escapeString($nombre);
+		if(!ctype_digit($categoria)) die("error ");
+		if(!is_numeric($precio)) die("error ");
+		if(!ctype_digit($stock)) die("error");
+		if(!ctype_digit($pto_reposicion)) die("error ");
 
 		$c=new Categorias;
 		if(!$c->existeCategoria($categoria)) die("error2"); //delego la validacion de cargos a cargos.php
@@ -34,10 +38,9 @@ class Productos extends Model{
 		$this->db->query("insert into productos	
 							(nombre,id_categoria,precio_venta,pto_reposicion,stock)
 							values
-							('$nombre',$categoria,22,22,22)");
+							('$nombre',$categoria,$precio,$stock,$pto_reposicion)");
 
 	}
-
 
 	public function productoEspecifico($id){
 		if(!ctype_digit($id)) die("error id");
@@ -145,7 +148,7 @@ class Productos extends Model{
 							left join productos p on pp.codigo_producto=p.codigo_producto
 							where pp.cuit=$cuit AND pp.codigo_producto=$cod");
 							
-
+							return $this->db->fetchAll();
 	}
 
 

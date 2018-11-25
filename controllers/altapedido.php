@@ -19,14 +19,13 @@ if(isset($_POST['producto'])){
     if(!isset($_POST['precio'])) die("error");
     if(!isset($_POST['cantidad'])) die("error");
     
-    
+	
     foreach ($_POST['producto'] as $key => $value) {
-        //echo $value . "<br />".$_POST['cuit'][$key];
-
-        if($_POST['cantidad'][$key]>0){
-        $e=new Pedidos;
-        $e->altaPedido($value,$_POST['precio'][$key],$_POST['cantidad'][$key],$_POST['proveedor'][$key]);
-        }
+        //if(!ctype_digit($_POST['cantidad'][$key])) die("error cantidad");		
+        //if($_POST['cantidad'][$key]>0){
+            $e=new Pedidos;
+            $e->altaPedido($value,$_POST['precio'][$key],$_POST['cantidad'][$key],$_POST['proveedor'][$key]);
+           // }
     }
 
     $ok=new AltaPedidoOk;

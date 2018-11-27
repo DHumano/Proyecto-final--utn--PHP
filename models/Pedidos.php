@@ -24,8 +24,9 @@ class Pedidos extends Model{
 
 
 	public function altaPedido($codigo_producto,$precio,$cant,$cuit){
-		if(!ctype_digit($cant)) die("error cantidad");
-		if($cant==0) die('cantidad no puede ser 0');
+		if(!ctype_digit($cant)) die("error no es numerico");
+		//var_dump($cant); //funciona,solo que está dando error en el segundo, por eso tira die después
+		//if($cant==0) die('error en cantidad');
 		if(!ctype_digit($codigo_producto)) die("error id");
 		if(!is_numeric($precio)) die("error id");
 		$this->db->query("UPDATE productos	

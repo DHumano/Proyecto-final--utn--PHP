@@ -33,13 +33,19 @@ $("#tr5").hide();
 $("#agregar").click(function(){
     cont=cont+1;
     $("#tr2").show();
-    if(cont==2)
+    cant2.pattern="^[1-9][0-9]*$";
+    if(cont==2){
         $("#tr3").show();
-    if(cont==3)
+        cant3.pattern="^[1-9][0-9]*$";
+    }
+    if(cont==3){
         $("#tr4").show();
-    if(cont==4)
+        cant4.pattern="^[1-9][0-9]*$";
+    }
+    if(cont==4){
         $("#tr5").show();
-
+        cant5.setAttribute('pattern', "^[1-9][0-9]*$");
+    }
 });
 
 
@@ -103,6 +109,13 @@ $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo la
         nuevo.innerHTML=recibido[i].razon_social;
         nuevo.value = recibido[i].cuit;
         document.getElementById("proveedor1").appendChild(nuevo);
+        var enviar2= $('#proveedor1').val();
+
+        if(recibido[i].cuit==enviar2){
+        var nuevo2=document.createElement("h4");
+        nuevo2.innerHTML=recibido[i].precio_producto; 
+        document.getElementById("precio1").appendChild(nuevo2);
+        }
     }
 });
 
@@ -119,6 +132,13 @@ $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo la
         nuevo.innerHTML=recibido[i].razon_social;
         nuevo.value = recibido[i].cuit;
         document.getElementById("proveedor2").appendChild(nuevo);
+        var enviar2= $('#proveedor2').val();
+
+        if(recibido[i].cuit==enviar2){
+            var nuevo2=document.createElement("h4");
+            nuevo2.innerHTML=recibido[i].precio_producto; 
+            document.getElementById("precio2").appendChild(nuevo2);
+            }
     }
 });
 
@@ -133,6 +153,13 @@ $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo la
         nuevo.innerHTML=recibido[i].razon_social;
         nuevo.value = recibido[i].cuit;
         document.getElementById("proveedor3").appendChild(nuevo);
+        var enviar2= $('#proveedor3').val();
+
+        if(recibido[i].cuit==enviar2){
+            var nuevo2=document.createElement("h4");
+            nuevo2.innerHTML=recibido[i].precio_producto; 
+            document.getElementById("precio3").appendChild(nuevo2);
+            }
     }
 });
 
@@ -147,6 +174,13 @@ $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo la
         nuevo.innerHTML=recibido[i].razon_social;
         nuevo.value = recibido[i].cuit;
         document.getElementById("proveedor4").appendChild(nuevo);
+        var enviar2= $('#proveedor4').val();
+
+        if(recibido[i].cuit==enviar2){
+            var nuevo2=document.createElement("h4");
+            nuevo2.innerHTML=recibido[i].precio_producto; 
+            document.getElementById("precio4").appendChild(nuevo2);
+            }
     }
 });
 
@@ -161,6 +195,13 @@ $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo la
         nuevo.innerHTML=recibido[i].razon_social;
         nuevo.value = recibido[i].cuit;
         document.getElementById("proveedor5").appendChild(nuevo);
+        var enviar2= $('#proveedor5').val();
+
+        if(recibido[i].cuit==enviar2){
+            var nuevo2=document.createElement("h4");
+            nuevo2.innerHTML=recibido[i].precio_producto; 
+            document.getElementById("precio5").appendChild(nuevo2);
+            }
     }
 });
 
@@ -178,11 +219,11 @@ $("#proveedor1").change(function(){
         for(i in recibido){
             if(recibido[i].cuit==enviar){
 
-            var nuevo=document.createElement("input");
-            nuevo.setAttribute('type', 'text');
+            var nuevo=document.createElement("h4");
+            //nuevo.setAttribute('type', 'text');
             
-            nuevo.value = recibido[i].precio_producto;
-            nuevo.setAttribute('value', recibido[i].precio_producto);
+            //nuevo.value = recibido[i].precio_producto;
+            //nuevo.setAttribute('value', recibido[i].precio_producto);
             nuevo.innerHTML=recibido[i].precio_producto; 
             document.getElementById("precio1").appendChild(nuevo);
             }
@@ -195,7 +236,7 @@ $("#producto1").change(function(){
     //$('#producto1').val();
     var enviar= this.value;
     $("#proveedor1").html("");
-
+    $("#precio1").html("");
     $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo las carpetas!!
         recibido=JSON.parse(recibido);
 
@@ -204,6 +245,14 @@ $("#producto1").change(function(){
             nuevo.innerHTML=recibido[i].razon_social;
             nuevo.value = recibido[i].cuit;
             document.getElementById("proveedor1").appendChild(nuevo);
+
+            var enviar2= $('#proveedor1').val();
+
+        if(recibido[i].cuit==enviar2){
+            var nuevo2=document.createElement("h4");
+            nuevo2.innerHTML=recibido[i].precio_producto; 
+            document.getElementById("precio1").appendChild(nuevo2);
+            }
         }
     });
 });
@@ -220,9 +269,9 @@ $("#proveedor2").change(function(){
         for(i in recibido){
             if(recibido[i].cuit==enviar){
 
-            var nuevo=document.createElement("input");
-            nuevo.setAttribute('type', 'text');
-            nuevo.setAttribute('value', recibido[i].precio_producto);
+            var nuevo=document.createElement("h4");
+            //nuevo.setAttribute('type', 'text');
+            //nuevo.setAttribute('value', recibido[i].precio_producto);
             nuevo.innerHTML=recibido[i].precio_producto;
             //nuevo.value = recibido[i].precio_producto; 
             document.getElementById("precio2").appendChild(nuevo);
@@ -235,7 +284,7 @@ $("#proveedor2").change(function(){
 $("#producto2").change(function(){
     var enviar= this.value;
     $("#proveedor2").html("");
-
+    $("#precio2").html("");
     $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo las carpetas!!
         recibido=JSON.parse(recibido);
 
@@ -244,6 +293,14 @@ $("#producto2").change(function(){
             nuevo.innerHTML=recibido[i].razon_social;
             nuevo.value = recibido[i].cuit;
             document.getElementById("proveedor2").appendChild(nuevo);
+
+            var enviar2= $('#proveedor2').val();
+
+        if(recibido[i].cuit==enviar2){
+            var nuevo2=document.createElement("h4");
+            nuevo2.innerHTML=recibido[i].precio_producto; 
+            document.getElementById("precio2").appendChild(nuevo2);
+            }
         }
     });
 });
@@ -260,9 +317,9 @@ $("#proveedor3").change(function(){
         for(i in recibido){
             if(recibido[i].cuit==enviar){
 
-            var nuevo=document.createElement("input");
-            nuevo.setAttribute('type', 'text');
-            nuevo.setAttribute('value', recibido[i].precio_producto);
+            var nuevo=document.createElement("h4");
+            //nuevo.setAttribute('type', 'text');
+            //nuevo.setAttribute('value', recibido[i].precio_producto);
             nuevo.innerHTML=recibido[i].precio_producto;
             //nuevo.value = recibido[i].precio_producto; 
             document.getElementById("precio3").appendChild(nuevo);
@@ -275,7 +332,7 @@ $("#proveedor3").change(function(){
 $("#producto3").change(function(){
     var enviar= this.value;
     $("#proveedor3").html("");
-
+    $("#precio3").html("");
     $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo las carpetas!!
         recibido=JSON.parse(recibido);
 
@@ -284,6 +341,14 @@ $("#producto3").change(function(){
             nuevo.innerHTML=recibido[i].razon_social;
             nuevo.value = recibido[i].cuit;
             document.getElementById("proveedor3").appendChild(nuevo);
+
+            var enviar2= $('#proveedor3').val();
+
+            if(recibido[i].cuit==enviar2){
+                var nuevo2=document.createElement("h4");
+                nuevo2.innerHTML=recibido[i].precio_producto; 
+                document.getElementById("precio3").appendChild(nuevo2);
+                }
         }
     });
 });
@@ -300,9 +365,9 @@ $("#proveedor4").change(function(){
         for(i in recibido){
             if(recibido[i].cuit==enviar){
 
-            var nuevo=document.createElement("input");
-            nuevo.setAttribute('type', 'text');
-            nuevo.setAttribute('value', recibido[i].precio_producto);
+            var nuevo=document.createElement("h4");
+            //nuevo.setAttribute('type', 'text');
+            //nuevo.setAttribute('value', recibido[i].precio_producto);
             nuevo.innerHTML=recibido[i].precio_producto;
             //nuevo.value = recibido[i].precio_producto; 
             document.getElementById("precio4").appendChild(nuevo);
@@ -314,7 +379,8 @@ $("#proveedor4").change(function(){
 $("#producto4").change(function(){
     var enviar= this.value;
     $("#proveedor4").html("");
-
+    $("#precio4").html("");
+    
     $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo las carpetas!!
         recibido=JSON.parse(recibido);
 
@@ -323,6 +389,14 @@ $("#producto4").change(function(){
             nuevo.innerHTML=recibido[i].razon_social;
             nuevo.value = recibido[i].cuit;
             document.getElementById("proveedor4").appendChild(nuevo);
+
+            var enviar2= $('#proveedor4').val();
+
+            if(recibido[i].cuit==enviar2){
+                var nuevo2=document.createElement("h4");
+                nuevo2.innerHTML=recibido[i].precio_producto; 
+                document.getElementById("precio4").appendChild(nuevo2);
+                }
         }
     });
 });
@@ -339,9 +413,9 @@ $("#proveedor5").change(function(){
         for(i in recibido){
             if(recibido[i].cuit==enviar){
 
-            var nuevo=document.createElement("input");
-            nuevo.setAttribute('type', 'text');
-            nuevo.setAttribute('value', recibido[i].precio_producto);
+            var nuevo=document.createElement("h4");
+            //nuevo.setAttribute('type', 'text');
+            //nuevo.setAttribute('value', recibido[i].precio_producto);
             nuevo.innerHTML=recibido[i].precio_producto;
             //nuevo.value = recibido[i].precio_producto; 
             document.getElementById("precio5").appendChild(nuevo);
@@ -353,6 +427,7 @@ $("#proveedor5").change(function(){
 $("#producto5").change(function(){
     var enviar= this.value;
     $("#proveedor5").html("");
+    $("#precio5").html("");
 
     $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo las carpetas!!
         recibido=JSON.parse(recibido);
@@ -362,6 +437,14 @@ $("#producto5").change(function(){
             nuevo.innerHTML=recibido[i].razon_social;
             nuevo.value = recibido[i].cuit;
             document.getElementById("proveedor5").appendChild(nuevo);
+
+            var enviar2= $('#proveedor5').val();
+
+            if(recibido[i].cuit==enviar2){
+                var nuevo2=document.createElement("h4");
+                nuevo2.innerHTML=recibido[i].precio_producto; 
+                document.getElementById("precio5").appendChild(nuevo2);
+                }
         }
     });
 });

@@ -20,13 +20,52 @@ if(isset($_POST['producto'])){
     if(!isset($_POST['cantidad'])) die("error");
     
 	
-    foreach ($_POST['producto'] as $key => $value) {
-        //if(!ctype_digit($_POST['cantidad'][$key])) die("error cantidad");		
-        //if($_POST['cantidad'][$key]>0){
-            $e=new Pedidos;
-            $e->altaPedido($value,$_POST['precio'][$key],$_POST['cantidad'][$key],$_POST['proveedor'][$key]);
-           // }
-    }
+    //foreach ($_POST['producto'] as $key => $value) { //aca tira pedido ok aunque tenga un cantidad =0 porque no hay un die aca,pero si pongo die mato todo
+        //if(!ctype_digit($_POST['cantidad'][$key])) die("error asd");	
+        //if($_POST['cantidad'][$key]=='0') die("error cantidad");	
+        $e=new Pedidos;
+        if($_POST['cantidad'][0]>0 && $_POST['cantidad'][1]>0 && $_POST['cantidad'][2]>0 && $_POST['cantidad'][3]>0 && $_POST['cantidad'][4]>0){
+            
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][0],$_POST['cantidad'][0],$_POST['proveedor'][0]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][1],$_POST['cantidad'][1],$_POST['proveedor'][1]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][2],$_POST['cantidad'][2],$_POST['proveedor'][2]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][3],$_POST['cantidad'][3],$_POST['proveedor'][3]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][4],$_POST['cantidad'][4],$_POST['proveedor'][4]);
+        }
+
+        else if($_POST['cantidad'][0]>0 && $_POST['cantidad'][1]>0 && $_POST['cantidad'][2]>0 && $_POST['cantidad'][3]>0 ){
+                        
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][0],$_POST['cantidad'][0],$_POST['proveedor'][0]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][1],$_POST['cantidad'][1],$_POST['proveedor'][1]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][2],$_POST['cantidad'][2],$_POST['proveedor'][2]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][3],$_POST['cantidad'][3],$_POST['proveedor'][3]);
+           
+        }
+
+        else if($_POST['cantidad'][0]>0 && $_POST['cantidad'][1]>0 && $_POST['cantidad'][2]>0 ){
+                        
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][0],$_POST['cantidad'][0],$_POST['proveedor'][0]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][1],$_POST['cantidad'][1],$_POST['proveedor'][1]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][2],$_POST['cantidad'][2],$_POST['proveedor'][2]);
+            
+        }
+
+
+        else if($_POST['cantidad'][0]>0 && $_POST['cantidad'][1]>0){
+                        
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][0],$_POST['cantidad'][0],$_POST['proveedor'][0]);
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][1],$_POST['cantidad'][1],$_POST['proveedor'][1]);
+            
+        }
+
+        else if($_POST['cantidad'][0]>0 ){
+                        
+            $e->altaPedido($_POST['producto'][0],$_POST['precio'][0],$_POST['cantidad'][0],$_POST['proveedor'][0]);
+            
+        }
+        else die("error en cantidad");
+
+    //}
 
     $ok=new AltaPedidoOk;
     $ok->render();

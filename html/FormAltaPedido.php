@@ -41,7 +41,7 @@ require '../html/partials/header.php';
                         </select>
                     </td>
                     <td>
-                        <input style="width:55px" type="text" value=0 name="cantidad[]" id="cantidad1" required>
+                        <input style="width:55px" type="text" value='0' name="cantidad[]" id="cantidad1" required  pattern="^[1-9][0-9]*$" oninput="check(this)">
                     </td>
                     <td>
                         <div name="precio[]" id="precio1">
@@ -63,7 +63,7 @@ require '../html/partials/header.php';
                         </select>
                     </td>
                     <td>
-                        <input style="width:55px" type="text" value=0  name="cantidad[]" id="cantidad2">
+                        <input style="width:55px" type="text" value='0'  name="cantidad[]" id="cantidad2"  oninput="check(this)">
                     </td>
                     <td>
                         <div id="precio2">
@@ -85,7 +85,7 @@ require '../html/partials/header.php';
                         </select>
                     </td>
                     <td>
-                        <input style="width:55px" type="text" value=0 name="cantidad[]" id="cantidad3">
+                        <input style="width:55px" type="text" value=0 name="cantidad[]" id="cantidad3"  oninput="check(this)">
                     </td>
                     <td>
                         <div id="precio3">
@@ -107,7 +107,7 @@ require '../html/partials/header.php';
                         </select>
                     </td>
                     <td>
-                        <input style="width:55px" type="text" value=0  name="cantidad[]" id="cantidad4">
+                        <input style="width:55px" type="text" value=0  name="cantidad[]" id="cantidad4"  oninput="check(this)">
                     </td>
                     <td>
                         <div  id="precio4">
@@ -129,7 +129,7 @@ require '../html/partials/header.php';
                         </select>
                     </td>
                     <td>
-                        <input style="width:55px" type="text" value=0  name="cantidad[]" id="cantidad5">
+                        <input style="width:55px" type="text" value=0  name="cantidad[]" id="cantidad5"  oninput="check(this)">
                     </td>
                     <td>
                         <div id="precio5">
@@ -150,6 +150,16 @@ require '../html/partials/header.php';
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="../js/pedido.js"></script>
 <script>
+
+ function check(input) {
+   if (input.value == 0 && input.style.display!='none') {
+     input.setCustomValidity('Ingrese un valor mayor a 0. máx 999');
+     //input.setAttribute('pattern', "^[1-9][0-9]*$");
+   } else {
+     // input is fine -- reset the error message    pattern="^[1-9][0-9]*$" 
+     input.setCustomValidity('');
+   }
+ }
 
 </script>
 <?php 

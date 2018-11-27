@@ -19,7 +19,7 @@ if(isset($_POST["email"])){
         exit;
     }
         else{$huboerror=true;} 
-    
+     
 
 }
 

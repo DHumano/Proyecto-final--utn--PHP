@@ -18,7 +18,7 @@ if(isset($_POST["email"])){
         header("Location:../index.php");
         exit;
     }
-        else{$huboerror=true;}
+        else{$huboerror=true;} 
     
 
 }

@@ -12,7 +12,7 @@ require '../html/partials/header.php';
         <label for="email">email</label>
           <input type="text" name="email" id="email">
          <label for="password">password</label>
-          <input type="text" name="password" id="password">
+          <input type="password" name="password" id="password">
           <input type="submit" >
         </form>
         <br>

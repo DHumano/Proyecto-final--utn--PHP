@@ -448,3 +448,37 @@ $("#producto5").change(function(){
         }
     });
 });
+
+
+
+// var proveedor5 = $('#proveedor5');
+// var precio6 = $('#precio5');  
+// var prod = $('#producto5');  
+
+// $("#producto5").change(ajax(prod,proveedor5,precio6));
+
+// function ajax(prod,proveedort,preciot){
+//     var enviar= prod.val();
+//     proveedort.html("");
+//     preciot.html("");
+
+//     $.get("../controllers/ajax.php",{proveedor:enviar},function(recibido){  //ojo las carpetas!!
+
+//         recibido=JSON.parse(recibido);
+
+//         for(i in recibido){
+//             var nuevo=document.createElement("option");
+//             nuevo.innerHTML=recibido[i].razon_social;
+//             nuevo.value = recibido[i].cuit;
+//             //document.proveedort[0].appendChild(nuevo);
+//             proveedort.append(nuevo);
+//             var enviar2= proveedort.val();
+
+//             if(recibido[i].cuit==enviar2){
+//                 var nuevo2=document.createElement("h4");
+//                 nuevo2.innerHTML=recibido[i].precio_producto; 
+//                 preciot.append(nuevo2);
+//                 }
+//         }
+//     });
+// }

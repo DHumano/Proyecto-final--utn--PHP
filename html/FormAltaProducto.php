@@ -24,7 +24,7 @@ require '../html/partials/header.php';
 	<form action="" method="post">
 	<div class="container">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-5">
         <div class="input-group">
         <span class="input-group-btn">
             <label class="btn btn-default" for="n">Nombre:</label>
@@ -34,7 +34,7 @@ require '../html/partials/header.php';
         </div>
     </div>
 	<div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-3">
         <div class="input-group">
         <span class="input-group-btn">
             <label class="btn btn-default" for="c">Categoria:</label>
@@ -48,7 +48,7 @@ require '../html/partials/header.php';
         </div>
 	</div>
 	<div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-2">
         <div class="input-group">
         <span class="input-group-btn">
             <label class="btn btn-default" for="p">Precio:</label>
@@ -58,7 +58,7 @@ require '../html/partials/header.php';
         </div>
 	</div>
 	<div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-2">
         <div class="input-group">
         <span class="input-group-btn">
             <label class="btn btn-default" for="s">Stock:</label>
@@ -68,10 +68,10 @@ require '../html/partials/header.php';
         </div>
 	</div>
 	<div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-3">
         <div class="input-group">
         <span class="input-group-btn">
-            <label class="btn btn-default" for="pr">Punto reposicion:</label>
+            <label class="btn btn-default" for="pr">Reposicion:</label>
 		</span>
 	<input class="form-control" type="text" name="pto_reposicion" id="pr">
 		</div>

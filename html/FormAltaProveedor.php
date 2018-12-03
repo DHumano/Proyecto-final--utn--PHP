@@ -18,7 +18,7 @@ require '../html/partials/header.php';
 	<form action="" method="post">
 	<div class="container">
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-5">
 		<div class="input-group">
 			<span class="input-group-btn">
 				<label class="btn btn-default" for="r">Razon social:</label>
@@ -28,7 +28,7 @@ require '../html/partials/header.php';
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-3">
 		<div class="input-group">
 			<span class="input-group-btn">
 				<label class="btn btn-default" for="c">Cuit:</label>
@@ -38,17 +38,17 @@ require '../html/partials/header.php';
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-4">
 		<div class="input-group">
 			<span class="input-group-btn">
-				<label class="btn btn-default" for="pc">Persona de contacto:</label>
+				<label class="btn btn-default" for="pc">Persona contacto:</label>
 			</span>
 			<input type="text" class="form-control" name="p_contacto" id="pc">
 		</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-5">
 		<div class="input-group">
 			<span class="input-group-btn">
 				<label class="btn btn-default" for="d">Direccion:</label>
@@ -58,7 +58,7 @@ require '../html/partials/header.php';
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-4">
 		<div class="input-group">
 			<span class="input-group-btn">
 				<label class="btn btn-default" for="e">Email:</label>
@@ -68,7 +68,7 @@ require '../html/partials/header.php';
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-3">
 		<div class="input-group">
 			<span class="input-group-btn">
 				<label class="btn btn-default" for="t">Telefono:</label>

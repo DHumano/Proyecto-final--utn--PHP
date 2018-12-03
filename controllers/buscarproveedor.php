@@ -16,7 +16,7 @@ require '../views/FormBusquedaProveedor.php';
 if(isset($_POST['busqueda'])){
 
 //validaciones aca
-    if(!isset($_POST['busqueda'])) die("error");
+    if(!isset($_POST['busqueda'])) die("debe ingresar término a buscar");
 
     $e=new Proveedores;  //controlador pide datos a modelo
     //$e->busquedaproducto($_POST['busqueda']);

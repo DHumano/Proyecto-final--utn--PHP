@@ -13,7 +13,7 @@ class Productos extends Model{
 	}
 	
 	public function busquedaProducto($nombre){
-		if(strlen($nombre)<1) die("error1");
+		if(strlen($nombre)<1) die("debe ingresar un valor válido");
 		$nombre=substr($nombre,0,40);
 		$nombre=$this->db->escapeString($nombre);
 		$nombre = str_replace("%", "\%", $nombre);
@@ -24,13 +24,13 @@ class Productos extends Model{
 	}
 
 	public function altaProducto($nombre,$categoria,$precio,$stock,$pto_reposicion){
-		if(strlen($nombre)<2) die("error1");
+		if(strlen($nombre)<2) die("debe ingresar un valor válido");
 		$nombre=substr($nombre,0,30);
 		$nombre=$this->db->escapeString($nombre);
-		if(!ctype_digit($categoria)) die("error ");
-		if(!is_numeric($precio)) die("error ");
-		if(!ctype_digit($stock)) die("error");
-		if(!ctype_digit($pto_reposicion)) die("error ");
+		if(!ctype_digit($categoria)) die("debe ingresar un valor válido");
+		if(!is_numeric($precio)) die("debe ingresar un valor válido");
+		if(!ctype_digit($stock)) die("debe ingresar un valor válido");
+		if(!ctype_digit($pto_reposicion)) die("debe ingresar un valor válido");
 
 		$c=new Categorias;
 		if(!$c->existeCategoria($categoria)) die("error2"); //delego la validacion de cargos a cargos.php
@@ -56,15 +56,15 @@ class Productos extends Model{
 
 	public function modificacionProducto($nombre,$id,$categoria,$precio,$stock,$pto_reposicion){
 		if(!ctype_digit($id)) die("error id");
-		if(!is_numeric($precio)) die("error id");
-		if(!ctype_digit($stock)) die("error id");
-		if(!ctype_digit($pto_reposicion)) die("error id");
-		if(strlen($nombre)<2) die("error1");
+		if(!is_numeric($precio)) die("error precio");
+		if(!ctype_digit($stock)) die("error stock");
+		if(!ctype_digit($pto_reposicion)) die("error pto reposición");
+		if(strlen($nombre)<2) die("debe ingresar un valor válido");
 		$nombre=substr($nombre,0,30);
 		$nombre=$this->db->escapeString($nombre);
 
 		$c=new Categorias;
-		if(!$c->existeCategoria($categoria)) die("error2"); //delego la validacion de cargos a cargos.php
+		if(!$c->existeCategoria($categoria)) die("categoría inexistente"); //delego la validacion de cargos a cargos.php
 
 
 
@@ -76,7 +76,7 @@ class Productos extends Model{
 	}
     
 	public function productoDeProveedor($cuit){
-		if(strlen($cuit)<2) die("error1");
+		if(strlen($cuit)<2) die("debe ingresar un valor válido");
 		$cuit=substr($cuit,0,15);
 		$cuit=$this->db->escapeString($cuit);
 							
@@ -98,7 +98,7 @@ class Productos extends Model{
 
 
 	public function altaProvisto($cuit,$codigo_producto,$precio){
-		if(strlen($cuit)<2) die("error1");
+		if(strlen($cuit)<2) die("debe ingresar un valor válido");
 		$cuit=substr($cuit,0,15);
 		$cuit=$this->db->escapeString($cuit);
 
@@ -126,7 +126,7 @@ class Productos extends Model{
 
 	public function provistoEspecifico($cuit,$codigo){
 		if(!ctype_digit($codigo)) die("error id");
-		if(strlen($cuit)<2) die("error1");
+		if(strlen($cuit)<2) die("debe ingresar un valor válido");
 		$cuit=substr($cuit,0,15);
 		$cuit=$this->db->escapeString($cuit);
 

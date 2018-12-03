@@ -19,10 +19,10 @@ if(isset($_POST['cuit'])){ //solo mandé esto,ahora tengo q acceder
 
     
     if(isset($_POST['razon_social'])){
-        if(!isset($_POST['persona_de_contacto'])) die("error1");
-        if(!isset($_POST['direccion'])) die("error2");
-        if(!isset($_POST['email'])) die("error3");
-        if(!isset($_POST['telefono'])) die("error4");
+        if(!isset($_POST['persona_de_contacto'])) die("debe ingresar un valor valido");
+        if(!isset($_POST['direccion'])) die("debe ingresar un valor valido");
+        if(!isset($_POST['email'])) die("debe ingresar un valor valido");
+        if(!isset($_POST['telefono'])) die("debe ingresar un valor valido");
          $f=new proveedores;
          $f->modificacionProveedor($_POST['razon_social'],$_POST['cuit'],$_POST['persona_de_contacto'],$_POST['direccion'],$_POST['email'],$_POST['telefono']);
          $m=new ModificacionproveedorOk;

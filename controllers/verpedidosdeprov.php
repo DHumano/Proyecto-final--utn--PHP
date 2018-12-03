@@ -16,7 +16,7 @@ require '../views/VerPedidosDeProv.php';
 if(isset($_GET['busqueda'])){
 
 //validaciones aca
-    if(!isset($_GET['busqueda'])) die("error");
+    if(!isset($_GET['busqueda'])) die("debe ingresar un valor válido");
 
     $e=new Pedidos;  //controlador pide datos a modelo
     //$e->busquedaproducto($_GET['busqueda']);

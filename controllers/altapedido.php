@@ -19,8 +19,8 @@ require '../views/AltaPedidoOk.php';
 //el proveedor va para pedido,agregar una fecha del pedido, nro pedido es id,, que pedidos tiene un proveedor!
 
 if(isset($_POST['producto'])){
-    if(!isset($_POST['precio'])) die("error");
-    if(!isset($_POST['cantidad'])) die("error");
+    if(!isset($_POST['precio'])) die("debe ingresar un precio");
+    if(!isset($_POST['cantidad'])) die("debe ingresar una cantidad");
     
 	
     //foreach ($_POST['producto'] as $key => $value) { //aca tira pedido ok aunque tenga un cantidad =0 porque no hay un die aca,pero si pongo die mato todo

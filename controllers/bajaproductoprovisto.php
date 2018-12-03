@@ -22,7 +22,7 @@ if(isset($_POST['cuit'])){ //solo mandé esto,ahora tengo q acceder
     if(isset($_POST['codigo_producto'])){ //solo mandé esto,ahora tengo q acceder
         //faltan los demás issets HACER ESTE ORDEN!
     
-        if(!isset($_POST['cuit'])) die("cuit no esta");
+        if(!isset($_POST['cuit'])) die("el cuit no es correcto");
         $a=new Productos;
         $a->bajaProvisto($_POST['cuit'],$_POST['codigo_producto']);
         $m=new BajaProvistoOk;

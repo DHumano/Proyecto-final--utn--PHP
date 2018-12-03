@@ -17,10 +17,10 @@ require '../views/AltaProductoOk.php';
 
 if(isset($_POST['nombre'])){
 
-    if(!isset($_POST['categoria'])) die("error");
-    if(!isset($_POST['precio'])) die("error");
-    if(!isset($_POST['stock'])) die("error");
-    if(!isset($_POST['pto_reposicion'])) die("error");
+    if(!isset($_POST['categoria'])) die("categoría incorrecta");
+    if(!isset($_POST['precio'])) die("debe ingresar un valor");
+    if(!isset($_POST['stock'])) die("debe ingresar un valor");
+    if(!isset($_POST['pto_reposicion'])) die("debe ingresar un valor");
 
     $e=new Productos;
     $e->altaProducto($_POST['nombre'],$_POST['categoria'],$_POST['precio'],$_POST['stock'], $_POST['pto_reposicion']);

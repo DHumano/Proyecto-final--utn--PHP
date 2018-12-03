@@ -14,7 +14,7 @@ class Proveedores extends Model{
 	
 	public function busquedaProveedor($razon){
 		//el isset se hace antes en el controlador, aca ya estarían seteadas...
-		if(strlen($razon)<1) die("error1");
+		if(strlen($razon)<1) die("debe ingresar un valor válido");
 		$razon=substr($razon,0,40);
 		$razon=$this->db->escapeString($razon);
 		$razon = str_replace("%", "\%", $razon);
@@ -25,27 +25,27 @@ class Proveedores extends Model{
 		return $this->db->fetchAll();
 	}
 	public function altaProveedor($cuit,$razon,$contacto,$direccion,$email,$telefono){
-		if(strlen($razon)<2) die("error1");
+		if(strlen($razon)<2) die("debe ingresar un valor válido");
 		$razon=substr($razon,0,30);
 		$razon=$this->db->escapeString($razon);
 
-		if(strlen($cuit)<2) die("error1");
+		if(strlen($cuit)<2) die("debe ingresar un valor válido");
 		$cuit=substr($cuit,0,30);
 		$cuit=$this->db->escapeString($cuit);
 
-		if(strlen($contacto)<2) die("error1");
+		if(strlen($contacto)<2) die("debe ingresar un valor válido");
 		$contacto=substr($contacto,0,30);
 		$contacto=$this->db->escapeString($contacto);
 
-		if(strlen($direccion)<2) die("error1");
+		if(strlen($direccion)<2) die("debe ingresar un valor válido");
 		$direccion=substr($direccion,0,30);
 		$direccion=$this->db->escapeString($direccion);
 
-		if(strlen($email)<2) die("error1");
+		if(strlen($email)<2) die("debe ingresar un valor válido");
 		$email=substr($email,0,30);
 		$email=$this->db->escapeString($email);
 
-		if(strlen($telefono)<2) die("error1");
+		if(strlen($telefono)<2) die("debe ingresar un valor válido");
 		$telefono=substr($telefono,0,30);
 		$telefono=$this->db->escapeString($telefono);
 
@@ -71,27 +71,27 @@ class Proveedores extends Model{
 
 	public function modificacionProveedor($nombre,$cuit,$persona,$direccion,$email,$telefono){
 		
-		if(strlen($nombre)<2) die("error1");
+		if(strlen($nombre)<2) die("debe ingresar un valor válido");
 		$nombre=substr($nombre,0,30);
 		$nombre=$this->db->escapeString($nombre);
 
-		if(strlen($cuit)<2) die("error1");
+		if(strlen($cuit)<2) die("debe ingresar un valor válido");
 		$cuit=substr($cuit,0,30);
 		$cuit=$this->db->escapeString($cuit);
 
-		if(strlen($persona)<2) die("error1");
+		if(strlen($persona)<2) die("debe ingresar un valor válido");
 		$persona=substr($persona,0,30);
 		$persona=$this->db->escapeString($persona);
 
-		if(strlen($direccion)<2) die("error1");
+		if(strlen($direccion)<2) die("debe ingresar un valor válido");
 		$direccion=substr($direccion,0,30);
 		$direccion=$this->db->escapeString($direccion);
 
-		if(strlen($email)<2) die("error1");
+		if(strlen($email)<2) die("debe ingresar un valor válido");
 		$email=substr($email,0,30);
 		$email=$this->db->escapeString($email);
 
-		if(strlen($telefono)<2) die("error1");
+		if(strlen($telefono)<2) die("debe ingresar un valor válido");
 		$telefono=substr($telefono,0,30);
 		$telefono=$this->db->escapeString($telefono);
 
@@ -103,11 +103,11 @@ class Proveedores extends Model{
 
 	public function alta2Proveedor($razon,$cuit){
 			
-			if(strlen($razon)<2) die("error1");
+			if(strlen($razon)<2) die("debe ingresar un valor válido");
 			$razon=substr($razon,0,30);
 			$razon=$this->db->escapeString($razon);
 
-			if(strlen($cuit)<2) die("error1");
+			if(strlen($cuit)<2) die("debe ingresar un valor válido");
 			$cuit=substr($cuit,0,30);
 			$cuit=$this->db->escapeString($cuit);
 		

@@ -20,10 +20,10 @@ if(isset($_POST['codigo_producto'])){ //solo mandé esto,ahora tengo q acceder
     
     if(isset($_POST['nombre'])){
         //validaciones !isset
-        if(!isset($_POST['categoria'])) die("error");
-        if(!isset($_POST['precio'])) die("error");
-        if(!isset($_POST['stock'])) die("error");
-        if(!isset($_POST['pto_reposicion'])) die("error");
+        if(!isset($_POST['categoria'])) die("categoría inválida");
+        if(!isset($_POST['precio'])) die("debe ingresar un valor correcto");
+        if(!isset($_POST['stock'])) die("debe ingresar un valor correcto");
+        if(!isset($_POST['pto_reposicion'])) die("debe ingresar un valor correcto");
         
          $f=new Productos;
          $f->modificacionProducto($_POST['nombre'],$_POST['codigo_producto'],$_POST['categoria'],$_POST['precio'],$_POST['stock'],$_POST['pto_reposicion']);

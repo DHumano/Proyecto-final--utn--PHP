@@ -18,7 +18,7 @@ require '../views/AltaProvistoOk.php';
 if(isset($_POST['cuit'])){ //solo mandé esto,ahora tengo q acceder
     
 
-    if(!isset($_POST['codigo_producto'])) die("error");
+    if(!isset($_POST['codigo_producto'])) die("debe ingresar un producto ");
     $e=new Productos;
     $e->altaProvisto($_POST['cuit'],$_POST['codigo_producto'],$_POST['precio']);
     $p=new AltaProvistoOk;

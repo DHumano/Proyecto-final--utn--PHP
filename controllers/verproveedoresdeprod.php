@@ -15,7 +15,7 @@ require '../views/VerProveedoresDeProd.php';
 if(isset($_GET['busqueda'])){
 
 //validaciones aca
-    if(!isset($_GET['busqueda'])) die("error");
+    if(!isset($_GET['busqueda'])) die("debe ingresar término a buscar");
 
     $e=new Productos;  //controlador pide datos a modelo
     //$e->busquedaproducto($_GET['busqueda']);

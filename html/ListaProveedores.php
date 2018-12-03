@@ -7,7 +7,7 @@ require '../html/partials/header.php';
 <div class="container">
 <ul class="nav nav-pills  nav-justified">
   <li role="presentation" class="active"><a class="btn btn-primary btn-lg color" href="../controllers/verproveedores.php">lista de proveedores</a></li>
-  <li role="presentation"><a class="btn btn-primary btn-lg color" href="javascript:history.go(-1)">Volver atrás</a></li>
+  <li role="presentation"><a class="btn btn-primary btn-lg color" href="../html/informesprodprov.php">Volver atrás</a></li>
 </ul>
     <div class="panel panel-info">
 

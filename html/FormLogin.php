@@ -4,10 +4,10 @@ require '../html/partials/header.php';
 
 ?>
 
-<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div id="content">
+<div class="centrar">
+		<!-- <div class="row"> -->
+			<!-- <div class="col-lg-12"> -->
+				<!-- <div id="content"> -->
         <form action="" method="post">
         <label for="email">email</label>
           <input type="text" name="email" id="email">
@@ -17,9 +17,9 @@ require '../html/partials/header.php';
         </form>
         <br>
 				</div>
-			</div>
-		</div>
-  </div>
+			<!-- </div> -->
+		<!-- </div> -->
+  <!-- </div> -->
 
 <?php 
 

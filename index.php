@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,8 +71,14 @@
           </ul>
     
           <ul class="nav navbar-nav navbar-right">
+          <?php
+          if(!isset($_SESSION["login"])) {?>
             <li><a href="controllers/login.php">Log in</a></li>
+            <?php }?>
+            <?php
+          if(isset($_SESSION["login"])) {?>
             <li><a href="controllers/logout.php">Log out</a></li>
+            <?php }?>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -85,8 +96,11 @@
         </h1>
             <h3>sistema de administración comercial</h3>
 				<hr>
+        <?php
+        if(!isset($_SESSION["login"])) {?>
 				<a href="controllers/login.php"><button class="btn btn-default btn-lg"><i class="fas fa-user-tie" aria-hidden="true"></i>Login</button></a>
-				</div>
+				<?php }?>
+        </div>
 			</div>
 		</div>
   </div>

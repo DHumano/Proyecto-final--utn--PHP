@@ -65,8 +65,14 @@
           </ul>
     
           <ul class="nav navbar-nav navbar-right">
+          <?php
+          if(!isset($_SESSION["login"])) {?>
             <li><a href="../controllers/login.php">Log in</a></li>
+            <?php }?>
+            <?php
+          if(isset($_SESSION["login"])) {?>
             <li><a href="../controllers/logout.php">Log out</a></li>
+            <?php }?>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

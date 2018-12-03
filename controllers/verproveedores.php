@@ -2,7 +2,10 @@
 session_start();
 
 if(!isset($_SESSION["login"])){
-    header("Location:login.php");
+    header('Refresh:0; url=login.php');
+    echo "<script>";
+    echo " alert('Debe loguearse para poder acceder a nuestras funciones');
+        </script>";
     exit;
 }
 require '../fw/fw.php'; //aca van a estar todos los requires del framework

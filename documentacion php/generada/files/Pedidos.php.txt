@@ -1,0 +1,71 @@
+<?php 
+/**
+* Clase para obtener información de pedidos
+*
+* Clase que permite obtener 
+* información relacionada con pedidos
+*
+* @package admingim
+* @author Dario <darioh.dev@gmail.com>
+* @version 1.2
+*/
+class Pedidos extends Model{
+/**
+	* Función que devuelve todas las pedidos.
+	*
+	* Si hay dudas sobre la herencia, chequear {@link Model la clase madre}.
+	*
+	* @return array retorna un array con la información de la query.
+	*/
+	public function getTodos(){
+		$this->db->query("select * from pedidos");
+		return $this->db->fetchAll();
+	}
+	
+		/**
+	* Función que hace un alta de pedido.
+	*
+	* Si hay dudas sobre la herencia, chequear {@link Model la clase madre}.
+	*
+	* @param int $codigo_producto un int que representa el codigo de producto
+	* @param real $precio real que representa el valor del producto
+	* @param int $cant un entero que representa la cantidad de producto
+	* @param string $cuit string que representa el cuit de proveedores
+	*/
+	public function altaPedido($codigo_producto,$precio,$cant,$cuit){
+		if(!ctype_digit($codigo_producto)) die("error id");
+		if(!is_numeric($precio)) die("error id");
+		if(!ctype_digit($cant)) die("error id");
+		
+		$this->db->query("UPDATE productos	
+							SET stock= stock+ $cant
+                            WHERE codigo_producto=$codigo_producto");
+
+
+		$this->db->query("insert into pedidos	
+							(cantidad,codigo_producto,precio_compra,cuit,entrega)
+							values
+							($cant,$codigo_producto,$precio,$cuit,now())");
+
+	}
+	
+			/**
+	* Función que mostrará los pedidos de cada proveedor
+	*
+	* Si hay dudas sobre la herencia, chequear {@link Model la clase madre}.
+	*
+	* @param int $id int que representa el cuit utilizado para la query
+	* @return array retorna un array obtenido de la query.
+	*/
+	public function pedidosDeProveedores($id){
+		
+		$this->db->query("select *	from pedidos p
+							left join proveedores pp on pp.cuit=p.cuit
+							where p.cuit='$id'");
+		return $this->db->fetchAll();
+	}
+
+
+
+}
+?>

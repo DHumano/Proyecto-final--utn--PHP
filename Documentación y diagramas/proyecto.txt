@@ -1,0 +1,8 @@
+OBJETIVO  									OK
+ALCANCE										OK
+LISTA DE EVENTOS							OK
+DIAGRAMA DE CONTEXTO						OK
+MODELO DER 									OK
+primer explosion(diagram sistemas) y DFD	OK
+diccionario de sistemas	(contiene tablas) 	OK
+especificaciones de procesos 				OK
